@@ -1,0 +1,50 @@
+<div class="grid-container">
+  <div>
+    <h1 class="mat-h1">Produce</h1>
+    <app-search-field></app-search-field>
+  </div>
+  <mat-grid-list cols="6" rowHeight="250px">
+    <mat-grid-tile *ngFor="let item of list$ | async" colspan="1" rowspan="1" >
+      <mat-card class="dashboard-card" >
+        <mat-card-header>
+          <mat-card-title>
+            Produce {{item}}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>Other info {{item}}</div>
+          <div>Some other info {{item}}</div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button (click)="deleteItem(item)">
+            Delete
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Add a produce item
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <form #formRef (ngSubmit)="addItem($event)" [formGroup]="newItemForm">
+            <mat-form-field>
+              <mat-label>Property Value</mat-label>
+              <input matInput type="text" />
+            </mat-form-field>
+          </form>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button type="submit" (click)="formRef.submit()">
+            Add
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>

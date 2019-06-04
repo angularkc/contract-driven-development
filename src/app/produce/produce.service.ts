@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {ProduceHttpService} from './produce.http.service';
 import {BehaviorSubject} from 'rxjs';
 import {Produce} from '../models/produce.model';
-import {NotificationService} from './notification.service';
+import {NotificationService} from '../services/notification.service';
 
 @Injectable()
 export class ProduceService {
@@ -24,8 +24,16 @@ export class ProduceService {
     this.httpService.add(item).subscribe(() => {
       this.loadItems();
       this.notification.notify('Successfully added produce.')
-    })
+    }, () => this.notification.notify('Failed to add produce.'))
   }
+
+  delete(item: Produce) {
+    this.httpService.add(item).subscribe(() => {
+      this.loadItems();
+      this.notification.notify('Successfully added produce.')
+    }, () => this.notification.notify('Failed to add produce.'))
+  }
+
 
   private loadItems(): void {
     this.httpService.query(this.currentQuery).subscribe((items) => {
