@@ -14,8 +14,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class ProduceComponent {
   list$ = this.service.list$;
   newItemForm = new FormGroup({
-    name: new FormControl(null, Validators.required),
-    subName: new FormControl(),
+    name: new FormControl("", Validators.required),
+    subName: new FormControl(""),
     quantity: new FormControl(null, Validators.required)
   });
 
