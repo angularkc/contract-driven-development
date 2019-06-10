@@ -2,7 +2,7 @@ version: "2"
 services:
   artifactory:
     build:
-      context: ..
+      context: ""
       dockerfile: Dockerfile-artifactory
     ports:
       - "8081:8081"
