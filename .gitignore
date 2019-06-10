@@ -45,7 +45,7 @@ testem.log
 .DS_Store
 Thumbs.db
 /target/
-!.mvn/wrapper/maven-wrapper.jar
+!produce-service/.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
 .apt_generated
