@@ -50,6 +50,9 @@ Thumbs.db
 ### STS ###
 .apt_generated
 .factorypath
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
 .settings
 .springBeans
 .sts4-cache
@@ -68,3 +71,6 @@ Thumbs.db
 
 ### VS Code ###
 .vscode/
+
+/contracts
+/build-output
