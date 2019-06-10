@@ -30,8 +30,8 @@ export class ProduceService {
   delete(item: Produce) {
     this.httpService.add(item).subscribe(() => {
       this.loadItems();
-      this.notification.notify('Successfully added produce.')
-    }, () => this.notification.notify('Failed to add produce.'))
+      this.notification.notify(`Successfully deleted ${item.name}.`)
+    }, () => this.notification.notify(`Failed to delete ${item.name}.`))
   }
 
 

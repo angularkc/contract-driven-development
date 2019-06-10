@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProduceComponent } from './produce/produce.component';
-import {AddItemComponent} from './add-item/add-item.component';
 import {MaterialModule} from './material.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
@@ -14,7 +13,6 @@ import { SearchFieldComponent } from './search-field/search-field.component';
   declarations: [
     AppComponent,
     ProduceComponent,
-    AddItemComponent,
     SearchFieldComponent
   ],
   imports: [

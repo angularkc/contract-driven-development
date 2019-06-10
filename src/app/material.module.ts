@@ -12,6 +12,7 @@ import {
   MatSnackBarModule,
   MatDialogModule
 } from '@angular/material';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 const moduleExports = [
   LayoutModule,
@@ -26,7 +27,7 @@ const moduleExports = [
   MatGridListModule,
   MatSnackBarModule,
   MatDialogModule,
-
+  FlexLayoutModule
 ];
 
 @NgModule({
