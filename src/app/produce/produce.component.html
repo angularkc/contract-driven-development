@@ -2,9 +2,9 @@
 <mat-toolbar>
   <span>Produce</span>
   <div class="spacer"></div>
-  <app-search-field (search)="onSearch($event)"></app-search-field>
 </mat-toolbar>
 <div  style="padding: 1rem">
+  <app-search-field (search)="onSearch($event)"></app-search-field>
   <div fxLayout="row wrap" fxLayoutGap="1rem grid">
     <div style="min-width: 200px" *ngFor="let item of list$ | async">
       <mat-card>
