@@ -1,5 +1,5 @@
 docker run  --rm \
--e "APPLICATION_BASE_URL=http://169.63.254.105:31417" \
+-e "APPLICATION_BASE_URL=http://169.63.254.105:31416" \
 -e "PUBLISH_ARTIFACTS=true" \
 -e "PROJECT_NAME=produce-service" \
 -e "PROJECT_GROUP=com.ibm.developer" \
