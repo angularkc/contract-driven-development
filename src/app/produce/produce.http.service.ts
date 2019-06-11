@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import { Produce } from '../models/produce.model';
 import { environment } from '../../environments/environment';
@@ -21,5 +21,9 @@ export class ProduceHttpService {
   add(item: Produce): Observable<Produce> {
     console.log(item);
     return this.http.post<Produce>(`${endpoint}`, item);
+  }
+
+  delete(item: Produce): Observable<Produce> {
+    return of(null);
   }
 }

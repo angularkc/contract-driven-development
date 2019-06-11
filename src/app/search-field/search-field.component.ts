@@ -4,11 +4,11 @@ import {FormControl} from '@angular/forms';
 @Component({
   selector: 'app-search-field',
   template: `
-    <mat-form-field>
+    <mat-form-field (keyup.enter)="submitSearch()">
       <mat-label>Search</mat-label>
       <input matInput [formControl]="searchControl">
     </mat-form-field>
-    <button mat-raised-button (click)="submitSearch()">Submit</button>
+    <button mat-raised-button type="button" (click)="submitSearch()">Submit</button>
   `
 })
 export class SearchFieldComponent {

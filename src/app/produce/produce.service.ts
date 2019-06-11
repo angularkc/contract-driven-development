@@ -20,7 +20,7 @@ export class ProduceService {
     this.loadItems();
   }
 
-  add(item: Produce, success?: () => void, error?: () => void) {
+  add(item: Produce, success = () => {}, error = () => {}) {
     this.httpService.add(item).subscribe(() => {
       this.loadItems();
       this.notification.notify('Successfully added produce.');
@@ -32,7 +32,7 @@ export class ProduceService {
   }
 
   delete(item: Produce) {
-    this.httpService.add(item).subscribe(() => {
+    this.httpService.delete(item).subscribe(() => {
       this.loadItems();
       this.notification.notify(`Successfully deleted ${item.name}.`)
     }, () => this.notification.notify(`Failed to delete ${item.name}.`))

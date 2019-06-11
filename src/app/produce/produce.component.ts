@@ -6,17 +6,15 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 @Component({
   selector: 'app-produce',
   templateUrl: './produce.component.html',
-  styleUrls: ['./produce.component.css'],
-  providers: [
-    ProduceService
-  ]
+  providers: [ProduceService]
 })
 export class ProduceComponent {
   list$ = this.service.list$;
+  // Validators.pattern()
   newItemForm = new FormGroup({
-    name: new FormControl("", Validators.required),
+    name: new FormControl("", [Validators.required, Validators.pattern('^(?=.*[a-zA-Z])[a-zA-Z0-9]+$')]),
     subName: new FormControl(""),
-    quantity: new FormControl(null)
+    quantity: new FormControl(null, [Validators.required])
   });
 
   constructor(private service: ProduceService) {
