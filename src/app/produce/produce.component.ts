@@ -16,7 +16,7 @@ export class ProduceComponent {
   newItemForm = new FormGroup({
     name: new FormControl("", Validators.required),
     subName: new FormControl(""),
-    quantity: new FormControl(null, Validators.required)
+    quantity: new FormControl(null)
   });
 
   constructor(private service: ProduceService) {
@@ -26,9 +26,10 @@ export class ProduceComponent {
   addItem() {
     if (this.newItemForm.invalid) {
       this.newItemForm.markAsTouched();
+      this.newItemForm.markAsDirty();
       return;
     }
-    this.service.add(this.newItemForm.value);
+    this.service.add(this.newItemForm.value, () => this.newItemForm.reset());
   }
 
   deleteItem(item: Produce) {

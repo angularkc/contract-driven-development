@@ -20,11 +20,15 @@ export class ProduceService {
     this.loadItems();
   }
 
-  add(item: Produce) {
+  add(item: Produce, success?: () => void, error?: () => void) {
     this.httpService.add(item).subscribe(() => {
       this.loadItems();
-      this.notification.notify('Successfully added produce.')
-    }, () => this.notification.notify('Failed to add produce.'))
+      this.notification.notify('Successfully added produce.');
+      success();
+    }, () => {
+      this.notification.notify('Failed to add produce.');
+      error();
+    })
   }
 
   delete(item: Produce) {
